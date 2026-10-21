@@ -2,9 +2,9 @@ version: 2
 
 sources:
   - name: eth
-    quoting: 
-      database: true
-      schema: true
+    # quoting: 
+    #   database: true
+    #   schema: true
     database: eth  
     schema: eth_schema  
     tables:
