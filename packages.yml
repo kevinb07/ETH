@@ -1,0 +1,14 @@
+packages:
+  - package: dbt-labs/codegen
+    version: 0.14.1
+  - package: dbt-labs/dbt_utils
+    version: 1.4.1
+  - package: dbt-labs/audit_helper
+    version: 0.14.0
+  - package: windsor-ai/dbt_facebook_ads
+    version: 0.0.2
+  
+  # use this format when accessing your repository via a classical personal access token
+  - git: "https://{{env_var('ETH_PAT')}}@github.com/kevinb07/dbt-external-tables.git" 
+ 
+   

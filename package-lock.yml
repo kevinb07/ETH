@@ -1,0 +1,12 @@
+packages:
+  - package: dbt-labs/codegen
+    version: 0.14.1
+  - package: dbt-labs/dbt_utils
+    version: 1.4.1
+  - package: dbt-labs/audit_helper
+    version: 0.14.0
+  - package: windsor-ai/dbt_facebook_ads
+    version: 0.0.2
+  - git: https://{{env_var('ETH_PAT')}}@github.com/kevinb07/dbt-external-tables.git
+    revision: e9be0139e9c2c10e3f8226e879dd54792716cf85
+sha1_hash: 90770862a4ff8e90be448ea37f99229c90dc1dea

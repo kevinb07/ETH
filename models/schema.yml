@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: transactions in the ethereum blockchain
+    columns:
+      - name: hash
+        description: >
+          The hash of the transaction. 
+          This is a unique identifier for the transaction.
+        data_tests:
+          - unique
+          - not_null
+
+   
