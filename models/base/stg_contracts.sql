@@ -1,4 +1,4 @@
-{{ config(materialized='view') }} 
+{# {{ config(materialized='view') }}  #}
 
 
 SELECT
@@ -7,4 +7,4 @@ block_number,
 bytecode,
 date,
 last_modified
-FROM {{ source('eth', 'contracts') }}
+FROM {{ source('eth','contracts') }}
