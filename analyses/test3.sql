@@ -1,0 +1,1 @@
+{{ codegen.generate_model_yaml(['stablecoin_per_day'])}}
