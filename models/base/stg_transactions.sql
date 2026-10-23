@@ -12,6 +12,10 @@ t.input
 
 from {{ source('eth', 'transactions') }} t
 
+{# 
+left join {{ ref('stg_transactions_enriched') }} tt
+on t.hash = tt.hash 
+#}
 
 {% if is_incremental() %}
 
