@@ -33,7 +33,7 @@ jobs:
         run: |
           mkdir -p ~/.dbt
           cp .dbt/profiles.yml ~/.dbt/profiles.yml
-          echo "$DBT PRIVATE KEY" > ~/.dbt/rsa_key.p8
+          echo "$DBT_PRIVATE_KEY" > ~/.dbt/rsa_key.p8
           chmod 600 ~/.dbt/rsa_key.p8
 
       - name: Install dbt deps
