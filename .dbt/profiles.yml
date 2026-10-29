@@ -1,0 +1,13 @@
+eth:
+  outputs:
+    ci:
+      account: VSWBGGQ-GD29410
+      database: CI
+      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH') }}"
+      role: ACCOUNTADMIN
+      schema: CI_SCHEMA
+      threads: 1
+      type: snowflake
+      user: KBOODH007@GMAIL.COM
+      warehouse: SNOWFLAKE_LEARNING_WH
+  target: ci
