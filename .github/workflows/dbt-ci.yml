@@ -13,6 +13,7 @@ jobs:
     env:
       DBT_PRIVATE_KEY: ${{ secrets.DBT_PRIVATE_KEY }}
       DBT_PRIVATE_KEY_PATH: /home/runner/.dbt/rsa_key.p8
+      ETH_PAT: ${{ secrets.ETH_PAT }}
 
     steps:
       - name: Checkout repo
