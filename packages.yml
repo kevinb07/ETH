@@ -8,6 +8,7 @@ packages:
   # - package: windsor-ai/dbt_facebook_ads
   #   version: 0.0.2
   
-  # use this format when accessing your repository via a classical personal access token
+  # use this format when accessing your repository via a classical personal access token  
   - git: "https://{{env_var('ETH_PAT')}}@github.com/kevinb07/dbt-external-tables.git" 
+  
  
