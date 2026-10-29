@@ -20,8 +20,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-flags:
-  fast-fail: true
+#flags:
+#  fast-fail: true
 
 seeds:
   +database: seeds
