@@ -1,0 +1,1 @@
+conn = snowflake.connector.connect(user="KBOODH007@GMAIL.COM",account="YL18556",private_key_file="/Users/kevinboodhoo/rsa_key.p8")
