@@ -23,7 +23,8 @@ case when t.receipt_contract_address != '' then 'contract_creation'
      when t.input = '0x' and t.value > 0 then 'plain_ether_transfer' 
 else 'other'
 end as transaction_category,
-1 as newfield
+1 as newfield,
+2 as newfield2
 
 from {{ ref('stg_transactions') }} t
 
