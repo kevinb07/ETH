@@ -10,7 +10,7 @@ count(*) as tx_count,
 -- {{ etherium_conversion('value') }} as sum_eth_value
 #}
 
-{{ conversion('value', '18') }} as sum_eth_value
+{{ conversion('value', '18') }} as sum_value_ethereum
 
 from {{ ref('stg_transactions_enriched') }}
 group by 
