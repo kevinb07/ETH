@@ -48,6 +48,7 @@ jobs:
       - name: Run dbt debug
         run: dbt debug --target ci
 
+      # copy manifest.json from main into state folder to use it for defer
       - name: Create state manifest from main
         run: |
           git checkout main
