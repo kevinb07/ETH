@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: eth
+    description: "here is my eth source"
     # quoting: 
     #   database: true
     #   schema: true
@@ -9,7 +10,12 @@ sources:
     schema: eth_schema  
     tables:
       - name: contracts
+        description: "here is my contracts table"
       - name: contracts_clone
       # - identifier: cnt
       - name: token_transfers
       - name: transactions
+        columns:
+          - name: hash
+            data_tests:
+              - unique
