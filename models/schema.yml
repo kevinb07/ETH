@@ -19,6 +19,7 @@ models:
     description: "{{ doc('transactions') }}"
     columns:
       - name: hash
+        tags: ["keys"]
         description: >
           The hash of the transaction. 
           This is a unique identifier for the transaction.
@@ -100,3 +101,16 @@ unit_tests:
     expect:
       rows:
         - { transaction_category: 'contract_creation' }
+
+
+exposures:
+
+  - name: eth_activity_per_day
+    type: dashboard
+
+    depends_on:
+      - ref('stg_transactions_enriched')
+
+    owner:
+      name: Kevin Boodhoo
+      email: data@udemy.com

@@ -7,4 +7,6 @@ packages:
     version: 0.14.0
   - git: https://{{env_var('ETH_PAT')}}@github.com/kevinb07/dbt-external-tables.git
     revision: e9be0139e9c2c10e3f8226e879dd54792716cf85
-sha1_hash: 4be1f00075be1137a12297f95a585bbb6f1084ce
+  - local: packages/finance
+  - local: packages/marketing
+sha1_hash: 53ebb505dc28e81884a32db8ed9a922baed819e5

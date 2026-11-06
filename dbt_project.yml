@@ -26,6 +26,10 @@ seeds:
   +database: seeds
   +schema: static
 
+tests:
+  +schema: null
+
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
