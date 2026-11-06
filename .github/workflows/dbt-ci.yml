@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
             fetch-depth: 0   #needed so we can access main too
 
@@ -49,14 +49,47 @@ jobs:
         run: dbt debug --target ci
 
       # copy manifest.json from main into state folder to use it for defer
+      # - name: Create state manifest from main
+      #   run: |
+      #     git checkout main
+      #     dbt deps
+      #     dbt parse --target prod
+      #     mkdir -p state
+      #     cp target/manifest.json state/manifest.json
+      #     git checkout -
+
       - name: Create state manifest from main
         run: |
-          git checkout main
+          # Save the current PR commit
+          PR_SHA=$(git rev-parse HEAD)
+
+          # Fetch latest main
+          git fetch origin main:refs/remotes/origin/main
+
+          # Switch to main
+          git checkout origin/main
+
+          # Install main dependencies
           dbt deps
+
+          # Generate production manifest
           dbt parse --target prod
+
+          # Save manifest
           mkdir -p state
           cp target/manifest.json state/manifest.json
-          git checkout -
+
+          # Return to PR branch
+          git checkout "$PR_SHA"
+
+          # IMPORTANT: Reinstall PR dependencies
+          dbt deps
+
+      - name: Verify dbt dependencies
+        run: |
+          dbt --version
+          dbt deps
+          ls dbt_packages/
 
       # --- Clone incrementals first (so is_incremental() is true) ---
       - name: Clone impacted incremental models into PR schema
