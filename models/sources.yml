@@ -21,6 +21,8 @@ sources:
           warn_after: {count: 12, period: hour}
           error_after: {count: 40, period: day}
         loaded_at_field: to_timestamp(date) 
+        config:
+          event_time: date
       - name: contracts_clone
       # - identifier: cnt
       - name: token_transfers
@@ -29,3 +31,9 @@ sources:
           - name: hash
             data_tests:
               - unique
+
+  - name: airbnb
+    database: airbnb  
+    schema: airbnb
+    tables:
+      - name: apartment_listings
